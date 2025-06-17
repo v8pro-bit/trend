@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body onload="checkLogin()">
+  <header>
+    <h1>🛠️ Admin Panel</h1>
+    <button onclick="logout()">Logout</button>
+  </header>
+
+  <div class="tabs">
+    <button onclick="showTab('download')">Download Schedule</button>
+    <button onclick="showTab('create')">Create Stream</button>
+    <button onclick="showTab('delete')">Delete Stream</button>
+  </div>
+
+  <div class="container">
+
+    <!-- DOWNLOAD -->
+    <div id="download" class="tab-content">
+      <h2>Download Schedule</h2>
+      <button onclick="downloadSchedule()">Fetch From API</button>
+      <div id="downloadList"></div>
+    </div>
+
+    <!-- CREATE -->
+    <div id="create" class="tab-content">
+      <h2>Create Stream</h2>
+      <input type="text" id="league" placeholder="League" />
+      <input type="text" id="team1" placeholder="Team 1" />
+      <input type="text" id="team2" placeholder="Team 2" />
+      <input type="text" id="time" placeholder="Match Time" />
+      <button onclick="createStream()">Add Match</button>
+    </div>
+
+    <!-- DELETE -->
+    <div id="delete" class="tab-content">
+      <h2>Delete Stream</h2>
+      <div id="deleteList"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
